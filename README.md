@@ -12,6 +12,7 @@ A responsive Arabic/English personal portfolio for Redro with a charcoal-and-red
 Edits made through the site are stored in the current browser's localStorage only. They do not update the GitHub repository or appear for other visitors. Shared editing requires a backend or content-management workflow.
 
 ## Projects
+- Redro Food Stock: https://mhamedshasho.github.io/redro-free-spoil-copy/ (offline inventory and expiry tracker)
 - Aleppo Center Cash: https://aleppo-center-cash.vercel.app/
 - Redro To-Do: https://mhamedshasho.github.io/redro-to-list/
 - Redro School Planner: https://github.com/mhamedshasho/redro-school-planner
