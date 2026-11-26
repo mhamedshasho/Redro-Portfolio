@@ -6,7 +6,7 @@ Personal portfolio of Mhamed Shasho and a directory of projects published under 
 
 - Responsive Arabic / English interface with RTL and LTR layouts.
 - Redesigned mobile-first layout with project categories and filters.
-- 13 Redro project cards with repository links and known live application links.
+- 11 Redro project cards with repository links and known live application links.
 - Profile, development interests, production/design experience, and contact section.
 - Static HTML, CSS, and JavaScript. No build step or backend required.
 
@@ -25,8 +25,6 @@ Personal portfolio of Mhamed Shasho and a directory of projects published under 
 | Redro Barber Manager | https://github.com/mhamedshasho/redro-barber-manager |
 | Redro Barber Client | https://github.com/mhamedshasho/redro-barber-client |
 | Redro Islamic | https://github.com/mhamedshasho/REDRO-ISLAMIC |
-| Redro Burger Engine | https://github.com/mhamedshasho/redro_burger |
-| Redro Bridge Maker | https://github.com/mhamedshasho/redro-bridge-maker |
 
 ## Deployment
 
