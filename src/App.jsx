@@ -10,7 +10,7 @@ function App(){
  const [lang,setLang]=useState('ar'),[menu,setMenu]=useState(false),[loading,setLoading]=useState(true)
  const isAr=lang==='ar', s=t[lang]
  useEffect(()=>{document.documentElement.lang=lang;document.documentElement.dir=isAr?'rtl':'ltr';const icon=document.querySelector('link[rel~="icon"]');if(icon)icon.href=redroLogo},[lang,isAr])
- useEffect(()=>{const timer=window.setTimeout(()=>setLoading(false),1400);return()=>window.clearTimeout(timer)},[])
+ useEffect(()=>{const timer=window.setTimeout(()=>setLoading(false),2600);return()=>window.clearTimeout(timer)},[])
  return <div className="app-shell">
   {loading&&<div className="page-loader" role="status" aria-label="Loading Redro"><div className="loader-mark"><img src={redroLogo} alt=""/></div><div className="loader-word">REDRO<span>.</span></div><div className="loader-track"><i/></div><div className="loader-water water-one"/><div className="loader-water water-two"/></div>}
   <div className="ambient ambient-one"/><div className="ambient ambient-two"/>
