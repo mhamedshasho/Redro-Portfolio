@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import redroLogo from '../channels4_profile.jpg'
 import { ArrowDown, ArrowUpLeft, ArrowUpRight, ArrowUp, ArrowLeft, ArrowRight, GitBranch, ExternalLink, Menu, X, Code2, Sparkles, Layers3, Mail, Globe2, Boxes, Search, Command, MonitorSmartphone } from 'lucide-react'
 
 const projects = [
@@ -26,18 +27,18 @@ function App(){
  const [lang,setLang]=useState('ar'),[filter,setFilter]=useState('all'),[query,setQuery]=useState(''),[menu,setMenu]=useState(false)
  const isAr=lang==='ar', s=t[lang]
  const shown=useMemo(()=>projects.filter(p=>(filter==='all'||p.category===filter)&&((p.name+' '+p.desc[lang]).toLowerCase().includes(query.toLowerCase()))),[filter,query,lang])
- useEffect(()=>{document.documentElement.lang=lang;document.documentElement.dir=isAr?'rtl':'ltr'},[lang,isAr])
+ useEffect(()=>{document.documentElement.lang=lang;document.documentElement.dir=isAr?'rtl':'ltr';const icon=document.querySelector('link[rel~="icon"]');if(icon)icon.href=redroLogo},[lang,isAr])
  useEffect(()=>{const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));return()=>obs.disconnect()},[shown,lang])
  const Arrow=isAr?ArrowLeft:ArrowRight
  return <div className="app-shell">
   <div className="ambient ambient-one"/><div className="ambient ambient-two"/>
-  <header className="topbar"><div className="container nav-wrap"><a className="brand" href="#home"><span className="brand-symbol">R</span><span>REDRO<span className="red-dot">.</span></span></a>
+  <header className="topbar"><div className="container nav-wrap"><a className="brand" href="#home"><img className="brand-logo" src={redroLogo} alt="Redro logo"/><span>REDRO<span className="red-dot">.</span></span></a>
    <nav className={menu?'nav-links opened':'nav-links'}><a href="#projects" onClick={()=>setMenu(false)}>{s.navProjects}</a><a href="#about" onClick={()=>setMenu(false)}>{s.navAbout}</a><a href="#contact" onClick={()=>setMenu(false)}>{s.navContact}</a></nav>
    <div className="nav-tools"><button className="language" onClick={()=>setLang(isAr?'en':'ar')}>{isAr?'EN':'عربي'} <Globe2 size={15}/></button><button className="mobile-menu" aria-label="Toggle menu" onClick={()=>setMenu(!menu)}>{menu?<X/>:<Menu/>}</button></div>
   </div></header>
   <main className="container">
    <section className="hero" id="home"><div className="hero-copy reveal"><div className="eyebrow"><span className="eyebrow-line"/> {s.eyebrow}</div><h1>{s.hello}<br/><span>{s.heroAccent}</span></h1><p className="hero-intro">{s.intro}</p><div className="hero-actions"><a className="button button-primary" href="#projects">{s.explore}<Arrow size={17}/></a><a className="button button-ghost" href="https://github.com/mhamedshasho" target="_blank" rel="noreferrer"><GitBranch size={17}/>{s.github}</a></div><div className="hero-meta"><span className="pulse-dot"/>{s.availability}<span className="meta-divider"/> <span>ALEPPO · SYRIA</span></div></div>
-    <div className="hero-art reveal"><div className="orbit orbit-a"/><div className="orbit orbit-b"/><div className="hero-glow"/><div className="hero-monogram">R<span>.</span></div><div className="floating-chip chip-top"><Code2 size={16}/> <span>BUILD</span></div><div className="floating-chip chip-bottom"><Sparkles size={16}/> <span>CREATE</span></div><div className="hero-card"><span className="card-kicker">REDRO STUDIO / 01</span><strong>{s.heroCard}<br/><em>{s.heroCardAccent}</em></strong><small>{s.heroCardDesc}</small></div></div>
+    <div className="hero-art reveal"><div className="orbit orbit-a"/><div className="orbit orbit-b"/><div className="hero-glow"/><div className="hero-logo-wrap"><img className="hero-logo" src={redroLogo} alt="شعار Redro"/></div><div className="floating-chip chip-top"><Code2 size={16}/> <span>BUILD</span></div><div className="floating-chip chip-bottom"><Sparkles size={16}/> <span>CREATE</span></div><div className="hero-card"><span className="card-kicker">REDRO STUDIO / 01</span><strong>{s.heroCard}<br/><em>{s.heroCardAccent}</em></strong><small>{s.heroCardDesc}</small></div></div>
    </section>
    <div className="quick-stats reveal"><div><strong>{projects.length.toString().padStart(2,'0')}</strong><span>{s.allProjects}</span></div><div><strong>AR / EN</strong><span>{isAr?'واجهة ثنائية اللغة':'Bilingual interface'}</span></div><div><strong>01<span className="stat-plus">+</span></strong><span>{isAr?'رحلة مستمرة':'Always evolving'}</span></div></div>
    <section className="projects-section" id="projects"><div className="section-heading reveal"><div><span className="section-kicker">{s.projectsKicker}</span><h2>{s.projectsTitle}<span>.</span></h2><p>{s.projectsDesc}</p></div><a className="store-link" href="https://redro-store-app.vercel.app/" target="_blank" rel="noreferrer"><Layers3 size={17}/> Redro Store <ArrowUpRight size={15}/></a></div>
