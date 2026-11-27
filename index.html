@@ -15,6 +15,14 @@
 <style>.boot-screen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;background:radial-gradient(ellipse at 50% 40%,#40121d,#09090c 68%);color:#f6f5f6;font-family:Arial,sans-serif}.boot-mark{width:66px;height:66px;display:grid;place-items:center;border-radius:19px;background:linear-gradient(145deg,#ff6976,#bb1c31);font-size:40px;font-weight:900;box-shadow:0 0 48px #f0445255;animation:bootPulse 1s ease-in-out infinite}.boot-screen strong{font-size:20px;letter-spacing:5px}.boot-screen strong span{color:#f04452}.boot-screen p{font-size:12px;color:#aaa7b2}.boot-line{width:145px;height:3px;border-radius:9px;overflow:hidden;background:#ffffff25}.boot-line i{display:block;width:45%;height:100%;background:#ff6575;animation:bootMove 1s ease-in-out infinite}@keyframes bootPulse{50%{transform:translateY(-5px) scale(1.04)}}@keyframes bootMove{from{transform:translateX(-130%)}to{transform:translateX(250%)}}@media(prefers-reduced-motion:reduce){.boot-mark,.boot-line i{animation:none}}</style><style>html,body,#root{width:100%;min-height:100%;margin:0;padding:0;border:0;background:#09090c}body{overflow-x:hidden}.app-shell{width:100%;max-width:100%;margin:0;border:0}</style></head>
 <body>
 <div id="root"><main class="boot-screen"><div class="boot-mark">R</div><strong>REDRO<span>.</span></strong><p>جارٍ تحميل الملف الشخصي...</p><div class="boot-line"><i></i></div></main></div>
+<script>
+window.setTimeout(function(){
+  var root=document.getElementById('root');
+  if(root && root.querySelector('.boot-screen')){
+    root.innerHTML='<main style="min-height:100vh;display:grid;place-items:center;padding:28px;background:#09090c;color:#f6f5f6;font-family:Arial,sans-serif;text-align:center"><div style="max-width:560px"><div style="font-size:42px;font-weight:900;color:#f04452;letter-spacing:4px">REDRO.</div><h1 style="font-size:28px">مرحباً بك في Redro</h1><p style="color:#aaa7b2;line-height:2">تعذّر تشغيل النسخة التفاعلية حالياً، لكن روابط Redro الأساسية متاحة.</p><p><a style="display:inline-block;margin:8px;padding:13px 18px;border-radius:10px;background:#f04452;color:white;text-decoration:none" href="https://redro-store-app.vercel.app/">متجر Redro</a><a style="display:inline-block;margin:8px;padding:13px 18px;border-radius:10px;border:1px solid #ffffff30;color:white;text-decoration:none" href="https://github.com/mhamedshasho">GitHub</a></p><button onclick="location.reload()" style="padding:12px 18px;border:0;border-radius:10px;background:#24242b;color:white">إعادة المحاولة</button></div></main>';
+  }
+},7000);
+</script>
 <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
