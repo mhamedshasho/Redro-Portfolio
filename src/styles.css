@@ -108,3 +108,38 @@ h1{font-size:clamp(52px,6.6vw,86px);line-height:1.2;letter-spacing:-2.2px;margin
 @media(prefers-reduced-motion:reduce){
  .hero-logo-wrap,.chip-top,.chip-bottom{animation:none}
 }
+
+
+.page-loader{position:fixed;inset:0;z-index:1000;display:grid;place-content:center;justify-items:center;gap:18px;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#321018 0%,#111016 42%,#08080b 78%);animation:loader-exit .65s ease 0s forwards;animation-delay:.72s;pointer-events:none}
+.loader-mark{width:88px;height:88px;padding:5px;border-radius:25px;border:1px solid #ff65754d;background:linear-gradient(145deg,#33333a,#15151b);box-shadow:0 0 55px #f0445245,0 20px 60px #0009;animation:loader-breathe 1.15s ease-in-out infinite}
+.loader-mark img{width:100%;height:100%;display:block;object-fit:cover;border-radius:19px}
+.loader-word{font:900 19px 'DM Sans',sans-serif;letter-spacing:5px;color:#f7f4f6}
+.loader-word span{color:var(--red2)}
+.loader-track{width:132px;height:3px;overflow:hidden;border-radius:10px;background:#ffffff20}
+.loader-track i{display:block;width:42%;height:100%;border-radius:10px;background:linear-gradient(90deg,#c51f39,#ff8992);box-shadow:0 0 14px #f04452;animation:loader-progress 1s cubic-bezier(.4,0,.2,1) forwards}
+.loader-water{position:absolute;z-index:-1;width:65vw;height:65vw;max-width:620px;max-height:620px;bottom:-75%;border:1px solid #f044522b;border-radius:43%;background:linear-gradient(145deg,#f0445212,#8d1b3420 45%,transparent 72%);filter:drop-shadow(0 0 30px #f0445210)}
+.water-one{animation:water-rise 3.8s ease-in-out infinite}
+.water-two{width:75vw;height:75vw;bottom:-79%;opacity:.55;animation:water-rise 5s ease-in-out -1s infinite reverse}
+.water-ribbon{position:absolute;z-index:0;pointer-events:none;width:390px;height:150px;border:1px solid #ff65751e;border-radius:48%;filter:blur(.2px);opacity:.7}
+.water-ribbon-one{transform:rotate(-28deg);animation:water-drift 9s ease-in-out infinite}
+.water-ribbon-two{width:340px;height:220px;transform:rotate(38deg);border-color:#ffffff12;animation:water-drift 12s ease-in-out -3s infinite reverse}
+.hero-logo-wrap:after{content:"";position:absolute;inset:-27px;border:1px solid #ff65751c;border-radius:48px;animation:water-ripple 4.2s ease-out infinite;pointer-events:none}
+.button,.language,.mobile-menu,.nav-links a,.brand,.about-panel,.contact-card{transition:transform .28s var(--ease),border-color .28s,background-color .28s,box-shadow .28s}
+.button:active,.language:active,.mobile-menu:active{transform:scale(.96)}
+.brand:active{transform:scale(.97)}
+.nav-links a:active{color:var(--red2)}
+.about-panel:hover{transform:translateY(-5px);border-color:#f0445245;box-shadow:0 22px 60px #0005}
+.contact-card:hover{border-color:#ff65756b}
+.reveal{animation:content-arrive .8s var(--ease) both}
+.hero-art.reveal{animation-delay:.12s}
+.about-panel.reveal:nth-child(2){animation-delay:.16s}
+.contact-card.reveal{animation-delay:.1s}
+@keyframes loader-breathe{0%,100%{transform:translateY(0) scale(1);box-shadow:0 0 45px #f0445235,0 20px 60px #0009}50%{transform:translateY(-7px) scale(1.035);box-shadow:0 0 70px #f0445260,0 25px 70px #0009}}
+@keyframes loader-progress{from{transform:translateX(-130%)}to{transform:translateX(245%)}}
+@keyframes loader-exit{to{opacity:0;visibility:hidden}}
+@keyframes water-rise{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-28px) rotate(12deg)}}
+@keyframes water-drift{0%,100%{translate:-8px 0;rotate:-5deg}50%{translate:13px -17px;rotate:7deg}}
+@keyframes water-ripple{0%{transform:scale(.94);opacity:.7}75%,100%{transform:scale(1.18);opacity:0}}
+@keyframes content-arrive{from{opacity:0;translate:0 18px;filter:blur(4px)}to{opacity:1;translate:0 0;filter:blur(0)}}
+@media(max-width:650px){.loader-mark{width:76px;height:76px;border-radius:22px}.water-ribbon{width:260px;height:110px}.water-ribbon-two{width:245px;height:160px}.hero-logo-wrap:after{inset:-19px}}
+@media(prefers-reduced-motion:reduce){.page-loader,.loader-mark,.loader-track i,.loader-water,.water-ribbon,.hero-logo-wrap:after,.reveal{animation:none!important}.page-loader{display:none}.button:active,.language:active,.mobile-menu:active{transform:none}}
