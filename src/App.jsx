@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { ArrowDown, ArrowUpLeft, ArrowUpRight, ArrowUp, ArrowLeft, ArrowRight, GitBranch, ExternalLink, Menu, X, Code2, Sparkles, Layers3, Mail, Globe2, Boxes, Search, Command, MonitorSmartphone, GitBranch } from 'lucide-react'
+import { ArrowDown, ArrowUpLeft, ArrowUpRight, ArrowUp, ArrowLeft, ArrowRight, GitBranch, ExternalLink, Menu, X, Code2, Sparkles, Layers3, Mail, Globe2, Boxes, Search, Command, MonitorSmartphone } from 'lucide-react'
 
 const projects = [
   {name:'Redro Store',category:'tools',type:{ar:'متجر التطبيقات',en:'App store'},icon:'R',desc:{ar:'بوابة Redro لاكتشاف التطبيقات والمشاريع وتحميل إصداراتها من مكان واحد.',en:'The Redro hub for discovering apps and projects and accessing their releases in one place.'},tags:['Android','PWA'],url:'https://redro-store-app.vercel.app/',repo:'https://github.com/mhamedshasho/Redro_store',featured:true},
