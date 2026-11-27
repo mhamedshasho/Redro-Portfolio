@@ -164,3 +164,33 @@ h1{font-size:clamp(52px,6.6vw,86px);line-height:1.2;letter-spacing:-2.2px;margin
 @keyframes loader-wave{0%,100%{transform:translate(-50%,0) rotate(-4deg)}50%{transform:translate(-46%,-55px) rotate(4deg)}}
 @keyframes logo-glow{0%,100%{filter:drop-shadow(0 0 8px #f0445222)}50%{filter:drop-shadow(0 0 28px #f0445280)}}
 @media(max-width:650px){.loader-mark{width:100px;height:100px}.loader-water{height:66vh;bottom:-42vh}}
+
+/* Redro Profile refresh */
+.page-loader{position:fixed!important;inset:0!important;z-index:99999!important;display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:14px!important;background:radial-gradient(ellipse at 50% 42%,#581522 0%,#1b1018 43%,#07070a 82%)!important;animation:loader-fade .45s ease 1.05s forwards!important}
+.loader-mark{width:94px!important;height:94px!important;position:relative;z-index:3;animation:loader-pulse 1.1s ease-in-out infinite!important}
+.loader-word,.loader-track{position:relative;z-index:3}
+.loader-word{font-size:23px!important;letter-spacing:7px!important}
+.loader-track{width:176px!important;height:4px!important;overflow:hidden}
+.loader-track i{width:45%!important;animation:loader-sweep 1s ease-in-out infinite!important}
+.loader-water{z-index:1!important;left:50%!important;width:130vw!important;height:72vh!important;bottom:-48vh!important;opacity:.65;border-radius:48% 52% 0 0/18% 22% 0 0!important;background:linear-gradient(180deg,#ff526b8c,#b51d3855 42%,transparent 100%)!important;animation:loader-wave 2.8s ease-in-out infinite!important}
+.loader-water.water-two{width:145vw!important;bottom:-55vh!important;opacity:.4;animation-duration:3.8s!important;animation-direction:reverse}
+.reveal{opacity:0!important;transform:translateY(22px)!important;filter:blur(3px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.75,.25,1),filter .7s ease!important;animation:none!important}
+.reveal.is-visible{opacity:1!important;transform:translateY(0)!important;filter:blur(0)!important}
+.store-strip{position:relative;z-index:2;display:flex;align-items:center;gap:15px;margin:-12px 0 92px;padding:17px 20px;border:1px solid #f0445240;border-radius:17px;background:linear-gradient(105deg,#251319,#131218 72%);box-shadow:0 16px 45px #0004;transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+.store-strip:hover{transform:translateY(-4px);border-color:#ff657580;box-shadow:0 22px 55px #0006}
+.store-strip-icon{width:43px;height:43px;display:grid;place-items:center;flex:none;border-radius:13px;color:#ff8791;background:#f0445224;border:1px solid #f0445248}
+.store-strip-copy{display:flex;flex-direction:column;gap:3px;flex:1}
+.store-strip-copy strong{font:800 12px 'DM Sans',sans-serif;letter-spacing:1.5px}
+.store-strip-copy span{font-size:11px;color:#aaa7b2}
+.store-strip>a{width:39px;height:39px;display:grid;place-items:center;border:1px solid #ffffff20;border-radius:11px;color:#ff929b;transition:transform .25s,background .25s}
+.store-strip>a:hover{transform:translateX(-3px);background:#f0445224}
+.about-panel{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease!important}
+.about-panel:hover{transform:translateY(-5px)!important;border-color:#f0445266;box-shadow:0 20px 55px #0006}
+.button,.language,.mobile-menu{touch-action:manipulation}
+.button:active,.language:active,.mobile-menu:active{transform:scale(.96)!important;filter:brightness(1.2)}
+@keyframes loader-fade{to{opacity:0;visibility:hidden}}
+@keyframes loader-pulse{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-6px) scale(1.035)}}
+@keyframes loader-sweep{0%{transform:translateX(-130%)}100%{transform:translateX(245%)}}
+@keyframes loader-wave{0%,100%{transform:translate(-50%,0) rotate(-4deg)}50%{transform:translate(-46%,-48px) rotate(4deg)}}
+@media(max-width:650px){.store-strip{margin:-2px 0 68px;padding:14px;border-radius:15px}.store-strip-icon{width:39px;height:39px}.store-strip-copy span{font-size:10px}.loader-mark{width:82px!important;height:82px!important}}
+@media(prefers-reduced-motion:reduce){.page-loader{animation:none!important;opacity:0;visibility:hidden}.loader-mark,.loader-track i,.loader-water{animation:none!important}.reveal{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}.store-strip,.about-panel,.button,.language,.mobile-menu{transition:none!important}}
